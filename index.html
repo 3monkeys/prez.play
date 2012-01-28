@@ -79,10 +79,9 @@
     $(document).ready(function() {
 		//read all md files of md directory with slides service
 
-			console.log(files);
+			
 			//add slide sections
 			files.forEach(function(file){
-				console.log(file, file.split('.md')[0]);
 				$('body').append('<section class="slide" id="'+file.split('.md')[0]+'"></section>');
 				
 			});
