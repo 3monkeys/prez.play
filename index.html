@@ -1,85 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset='utf-8'>
+	<meta charset="utf-8">
+	<title>Play!>Framework</title>
+	<meta name="viewport" content="width=1024, user-scalable=no">
 
-  <title>3monkeys/prez.play @ GitHub</title>
+	<link rel="stylesheet" href="core/deck.core.css" type="text/css">
+    <!-- EXTENSIONS -->
+    <link rel="stylesheet" href="extensions/goto/deck.goto.css">
+   	<link rel="stylesheet" href="extensions/menu/deck.menu.css">
+   	<link rel="stylesheet" href="extensions/navigation/deck.navigation.css">
+   	<link rel="stylesheet" href="extensions/status/deck.status.css">
+   	<link rel="stylesheet" href="extensions/hash/deck.hash.css">
 
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #718d38;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #8e72c7; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #8e72c7; }
-    h3 { text-align: center; color: #8e72c7; }
-    a { color: #8e72c7; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
+	<!-- Any other extension CSS files go here. -->
+
+	<link rel="stylesheet" href="themes/style/web-2.0.css" type="text/css">
+	<link rel="stylesheet" href="themes/transition/horizontal-slide.css">
+
+    <link rel="stylesheet" href="css/default.min.css">
+    <style>
+        pre code {
+            background: white;
+        }
+        .deck-container pre {
+            font-family: Monaco, Andale Mono, consolas, Courier New, monospace;
+        }
+        .deck-container code {
+            font-family: Monaco, Andale Mono, consolas, Courier New, monospace;
+        }
+    </style>
+
+
+	<!-- Replace path with correct path to Modernizr file. -->
+	<script src="js/modernizr.custom.js"></script>
 </head>
+<body class="deck-container">
+<!--
 
-<body>
-  <a href="https://github.com/3monkeys/prez.play"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+-->
+<!-- Other extension HTML snippets go here, at the bottom of the deck container. -->
 
-  <div id="container">
 
-    <div class="download">
-      <a href="https://github.com/3monkeys/prez.play/zipball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/3monkeys/prez.play/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
-    </div>
-
-    <h1><a href="https://github.com/3monkeys/prez.play">prez.play</a>
-      <span class="small">by <a href="https://github.com/3monkeys">3monkeys</a></span></h1>
-
-    <div class="description">
-      prez.play
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-      <h2>Contact</h2>
-      <p> (ph.charriere@k33g.org)<br/>      </p>
-    
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/3monkeys/prez.play/zipball/master">zip</a> or
-      <a href="https://github.com/3monkeys/prez.play/tarball/master">tar formats.
+    <a href="#extensions-menu" class="deck-prev-link" title="Previous">←</a>
+    <a href="#extensions-status" class="deck-next-link" title="Next">→</a>
+    <form action="." method="get" class="goto-form">
+    <label for="goto-slide">Go to slide:</label>
+    <input type="text" name="slidenum" id="goto-slide">
+        <input type="submit" value="Go">
+    </form>
+    <p class="deck-status">
+        <span class="deck-status-current"></span>/<span class="deck-status-total"></span>
     </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/3monkeys/prez.play</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/3monkeys/prez.play">3monkeys/prez.play</a>
-    </div>
-
-  </div>
-
 </body>
+
+<!-- Update these paths to point to the correct files. -->
+
+<script src="js/showdown.js"></script>
+<script src="js/highlight.min.js"></script>
+
+
+<script src="js/jquery-1.7.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<!-- Add any other extension JS files here -->
+<!-- Deck Core and extensions -->
+
+<script src="extensions/hash/deck.hash.js"></script>
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+
+<script src="array.slides.js"></script>
+
+<script>
+
+    $(document).ready(function() {
+		//read all md files of md directory with slides service
+
+			console.log(files);
+			//add slide sections
+			files.forEach(function(file){
+				console.log(file, file.split('.md')[0]);
+				$('body').append('<section class="slide" id="'+file.split('.md')[0]+'"></section>');
+				
+			});
+			//parse markdown and colorize
+			var converter = new Showdown.converter();
+	        $.deck('.slide');
+	        $("section").each(function(index,e) {
+	            var id = e.getAttribute("id"), file = "md/"+id+".md";
+	            $.get(file, function(page) {
+	                $('#'+id).html(converter.makeHtml(page));
+	                $('#'+id+' > pre code').each(function(index,e) {hljs.highlightBlock(e, '    ');});
+	            });
+	        });
+
+	
+    });
+
+</script>
+
+
 </html>
