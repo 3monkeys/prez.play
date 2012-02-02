@@ -2,7 +2,7 @@
 
 Cette présentation est visible dans votre navigateur à cette adresse : [http://3monkeys.github.com/prez.play/](http://3monkeys.github.com/prez.play/).
 
-Cette présentation est une explication des grands principes de Play!>Framework, suivie d'un mini-tutorial des tiné à vous mettre sur les rails très facilement.
+Cette présentation est une explication des grands principes de Play!>Framework, suivie d'un mini-tutorial destiné à vous mettre sur les rails très facilement.
 
 Elle a été spécialement réalisée pour le **TOGO Jug**. Elle a été présentée à distance de Grenoble (France) le 28.01.2012 par Loïc Descotte [@loic_d](https://twitter.com/#!/loic_d) & [@k33g_org](https://twitter.com/#!/k33g_org) via Webex, vers Lomé (Togo), d'autres villes d'Afrique (je n'ai pas encore la liste). Ce fut très "international", puisque les 2 JUG Trotters Lyonnais (Agnès & Cyril) étaient eux aussi connectés depuis le Nevada. Ce fut très enrichissant pour nous (donc Loïc & votre serviteur), et j'ai aimé ça :).
 
