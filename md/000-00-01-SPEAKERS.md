@@ -14,4 +14,4 @@
 - Steria
 - [http://k33g.github.com/](http://k33g.github.com/)
 
-Notre eBook open source sur Play : http://3monkeys.github.com/play.rules/
+Notre eBook open source sur Play : [http://3monkeys.github.com/play.rules/](http://3monkeys.github.com/play.rules/)
