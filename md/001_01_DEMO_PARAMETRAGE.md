@@ -21,6 +21,3 @@ La structure de votre application est prête :
 	|   |---stylesheets
 	|
 	|---test
-	
-	
-	Code des exemples : https://github.com/3monkeys/prez.play/tree/gh-pages/DEMOS
