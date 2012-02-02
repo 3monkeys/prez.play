@@ -22,7 +22,7 @@
 			- on fait le lien avec l'attribut user de Bookmark
 		*/
 		@OneToMany(mappedBy="user",cascade=CascadeType.ALL)
-		public List<Bookmark> users = new ArrayList();
+		public List<Bookmark> bookmarks = new ArrayList();
 
 
 	    public User(String username, String password, String email) {
